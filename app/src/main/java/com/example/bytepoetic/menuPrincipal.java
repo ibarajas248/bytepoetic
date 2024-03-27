@@ -3,9 +3,9 @@ package com.example.bytepoetic;
 public class menuPrincipal {
 
     private String Titulo;
-    private int foto;
+    private String foto;
 
-    public menuPrincipal(String titulo, int foto) {
+    public menuPrincipal(String titulo, String foto) {
         Titulo = titulo;
         this.foto = foto;
     }
@@ -18,11 +18,12 @@ public class menuPrincipal {
         Titulo = titulo;
     }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 }
+

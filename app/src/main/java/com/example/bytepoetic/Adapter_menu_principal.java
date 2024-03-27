@@ -3,10 +3,13 @@ package com.example.bytepoetic;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -35,6 +38,13 @@ public class Adapter_menu_principal extends RecyclerView.Adapter<Adapter_menu_pr
     @Override
     public void onBindViewHolder(@NonNull Adapter_menu_principal.viewHolderMenu holder, int position) {
         holder.titulo.setText(String.valueOf(listaMenu.get(position).getTitulo()));
+        String imagen= listaMenu.get(position).getFoto();
+
+
+
+        Glide.with(holder.itemView.getContext())
+                .load(imagen)
+                .into(holder.imagen);
 
     }
 
@@ -45,9 +55,11 @@ public class Adapter_menu_principal extends RecyclerView.Adapter<Adapter_menu_pr
 
     public class viewHolderMenu extends RecyclerView.ViewHolder {
         TextView titulo;
+        ImageView imagen;
         public viewHolderMenu(@NonNull View itemView) {
             super(itemView);
             titulo=itemView.findViewById(R.id.titulo);
+            imagen=itemView.findViewById(R.id.idImagen);
         }
     }
 }
